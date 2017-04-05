@@ -21,11 +21,8 @@
 //
 //    }
 
-import academy.*;
-import mojeMetody.MyLinkedList;
-
-import java.util.ArrayList;
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Scanner;
 
 public class Main {
 
@@ -51,25 +48,44 @@ public class Main {
 //
 ////  System.out.print(fetchedPublication.getTitle());
 //            LinkedList<Publication> publicationsLL = new LinkedList<>();
-            MyLinkedList<Student> studentsList = new MyLinkedList<>();
-            Student studentOne = new Student("Rafał", new Date(1,1,1990), "45522");
-            Student studentTwo = new Student("Tomek", new Date(1,1,1990), "11111");
-            Student studentThree = new Student("Maciek", new Date(1,1,1980), "11112");
+//            MyLinkedList<Student> studentsList = new MyLinkedList<>();
+//            Student studentOne = new Student("Rafał", new Date(1,1,1990), "45522");
+//            Student studentTwo = new Student("Rafal", new Date(1,1,1990), "11111");
+//            Student studentThree = new Student("Maciek", new Date(1,1,1980), "11112");
 
-            studentsList.add(studentOne);
-            studentsList.add(studentTwo);
-            studentsList.add(studentThree);
+//            studentsList.add(studentOne);
+//            studentsList.add(studentTwo);
+//            studentsList.add(studentThree);
 
-            System.out.println("Students list: ");
-            studentsList.printAllList();
-
-            studentsList.removeFirst();
-
-            System.out.println("Students list: ");
-            studentsList.printAllList();
-
+//            System.out.println("Students list: ");
+//            studentsList.printAllList();
+//            studentsList.removeFirst();
+//            System.out.println("Students list: ");
+//            studentsList.printAllList();
 
 //            System.out.println(studentsList.ifExists(studentOne));
 //            System.out.println(studentsList.ifExists(studentThree));
+
+//            HashSet<Student> students = new HashSet<>();
+//            students.add(studentOne);
+//            students.add(studentTwo);
+//            students.add(studentThree);
+
+//            System.out.println("Ilość studentow: " + students.size());
+//            System.out.println(students);
+
+            //zadanie z parami - wersja prostsza
+            HashSet<String> couples = new HashSet<>();
+            Scanner scanner = new Scanner(System.in);
+
+            int couplesAmount = scanner.nextInt();
+
+            for(int i = 0; i < couplesAmount; i++){
+                scanner.nextLine();
+                String couple = scanner.next();
+                couples.add(couple);
+                System.out.println(couples.size());
+            }
+
         }
     }

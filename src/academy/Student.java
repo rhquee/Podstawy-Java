@@ -36,8 +36,13 @@ public class Student extends Person {
     }
 
     @Override
-    public int hashCode() {
-        return indexNumber.hashCode();
+//  public int hashCode() {
+//        return indexNumber.hashCode();
+//    }
+
+    //zwracamy dlugosc imienia
+    public int hashCode(){
+        return getName().length();
     }
 
     public void setHeight(int height) {

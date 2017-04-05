@@ -47,15 +47,15 @@ public class MyLinkedList<T> {
 
     //usuwanie ostatniego elementu ?????
     // trzeba to poprawic:
-    public void removeLast() {
-        if (head != null) {
-            Node currentNode = head;
-            do {
-                currentNode = currentNode.getNext();
-            } while (currentNode.getNext() != null);
-            currentNode.setNext(null);
-        }
-    }
+//    public void removeLast() {
+//        if (head != null) {
+//            Node currentNode = head;
+//            do {
+//                currentNode = currentNode.getNext();
+//            } while (currentNode.getNext() != null);
+//            currentNode.setNext(null);
+//        }
+//    }
 
 
     //uuswanie pierwszego elementu
