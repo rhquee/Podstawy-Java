@@ -16,7 +16,7 @@ public class Date {
         this.month = month;
         this.year = year;
         timeZone = "Greenwitch";
-        System.out.println("Jestem w kons. Date(int,int,int");
+        //System.out.println("Jestem w kons. Date(int,int,int");
     }
 
     public String printDate() {

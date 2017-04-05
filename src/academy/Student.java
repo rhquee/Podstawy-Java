@@ -8,14 +8,15 @@ public class Student extends Person {
     public String indexNumber;
     private int height;
 
+//    public String greetings() {return "I am student, my name is: " + getName() + " My index is: " + indexNumber;
     public String greetings() {
-        return "I am student, my name is: " + getName() + " My index is: " + indexNumber;
+        return String.format("I am student, my name is: %s My index is: %s ", getName(), indexNumber);
     }
 
     public Student(String name, Date birthday, String indexNumber) {
         super(name, birthday);
         this.indexNumber = indexNumber;
-        System.out.println("Konstruktor Student");
+        //System.out.println("Konstruktor Student");
         setHeight(180);
     }
 

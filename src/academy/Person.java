@@ -22,7 +22,7 @@ public class Person {
     public Person(String name, Date date) {
         this.name = name;
         this.birthday = date;
-        System.out.println("Jestem w kons. Person(String,age)");
+        //System.out.println("Jestem w kons. Person(String,age)");
     }
 
     //metody:
