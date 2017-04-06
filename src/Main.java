@@ -24,32 +24,42 @@
 import academy.Date;
 import academy.Student;
 import com.sun.org.apache.xpath.internal.SourceTree;
+import couple.Couple;
 import mojeMetody.StringUtils;
 
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.TreeSet;
 
+import static java.lang.System.out;
+
 public class Main {
 
         public static void main(String[] args) {
-            //set przechowuje elementy unikalne
-            //hash set nie gwarantuje kolejnosci
-            HashSet<Integer> set = new HashSet<>();
-            set.add(1);
-            set.add(1);
-            set.add(5);
-            set.add(30);
-            set.add(200);
-            System.out.println(set);
+            //tu sprawdzam tylko czy equals działa
+//            Couple couple1 = new Couple("a", "b");
+//            Couple couple2 = new Couple("a", "b");
+//            System.out.println(couple1.equals(couple2));
 
-            //treeSet przchowuje elementy posortowane
-            TreeSet<Integer> set2 = new TreeSet<>();
-            set2.add(1);
-            set2.add(1);
-            set2.add(5);
-            set2.add(200);
-            set2.add(220);
-            System.out.println(set2);
+            //tu jest zadanie
+            HashSet<Couple> couples = new HashSet<>();
+            Scanner scanner = new Scanner(System.in);
+
+            int couplesAmount = scanner.nextInt();
+            scanner.nextLine();
+
+            for(int i = 0; i < couplesAmount; i++){
+                String readedLine = scanner.nextLine();
+                String[] splitted = readedLine.split(" ");
+                System.out.printf("imie1:%s imie2:%s\n", splitted);
+
+                Couple couple = new Couple(splitted[0], splitted[1]);
+
+                couples.add(couple);
+                System.out.println(couples.size());
+
+            }
+
+
         }
     }
