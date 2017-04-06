@@ -34,6 +34,7 @@ import java.util.Scanner;
 import java.util.TreeSet;
 
 import static java.lang.System.out;
+import static java.lang.System.setOut;
 
 public class Main {
 
@@ -73,7 +74,20 @@ public class Main {
 //            System.out.println(map);
 
                 PhoneBook phoneBook = new PhoneBook();
-                phoneBook.readContactFromUser();
+               // phoneBook.readContactFromUser();
+            phoneBook.addContact("Tomasz", 603111111);
+            phoneBook.addContact("Michał", 603222222);
+            phoneBook.addContact("Daniel", 603333333);
+            phoneBook.addContact("Wojciech", 603444444);
+
+//            System.out.println(phoneBook.findNumber("Tomasz"));
+//            System.out.println(phoneBook.findNumber("Marcin"));
+//
+//            phoneBook.printAllContact();
+
+
+           System.out.println(phoneBook.findByPartialName("Toma"));
+            System.out.println(phoneBook.findAllByPartialName("Woj"));
 
             }
         }
