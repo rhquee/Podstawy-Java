@@ -26,7 +26,9 @@ import academy.Student;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import couple.Couple;
 import mojeMetody.StringUtils;
+import phonebook.PhoneBook;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -36,30 +38,42 @@ import static java.lang.System.out;
 public class Main {
 
         public static void main(String[] args) {
-            //tu sprawdzam tylko czy equals działa
-//            Couple couple1 = new Couple("a", "b");
-//            Couple couple2 = new Couple("a", "b");
-//            System.out.println(couple1.equals(couple2));
+//            //tu sprawdzam tylko czy equals działa
+////            Couple couple1 = new Couple("a", "b");
+////            Couple couple2 = new Couple("a", "b");
+////            System.out.println(couple1.equals(couple2));
+//
+//            //tu jest zadanie
+//            HashSet<Couple> couples = new HashSet<>();
+//            Scanner scanner = new Scanner(System.in);
+//
+//            int couplesAmount = scanner.nextInt();
+//            scanner.nextLine();
+//
+//            for(int i = 0; i < couplesAmount; i++){
+//                String readedLine = scanner.nextLine();
+//                String[] splitted = readedLine.split(" ");
+//                System.out.printf("imie1:%s imie2:%s\n", splitted);
+//
+//                Couple couple = new Couple(splitted[0], splitted[1]);
+//
+//                couples.add(couple);
+//                System.out.println(couples.size());
+//            }
+//
+//            HashMap<Integer, String> map = new HashMap<>();
+//            map.put(1, "jeden");
+//            map.put(8, "osiem");
+//            map.put(2, "dwa");
+//            map.put(10, "dycha");
+//
+//            String value = map.get(8);
+//            System.out.println(value);
+//
+//            System.out.println(map);
 
-            //tu jest zadanie
-            HashSet<Couple> couples = new HashSet<>();
-            Scanner scanner = new Scanner(System.in);
-
-            int couplesAmount = scanner.nextInt();
-            scanner.nextLine();
-
-            for(int i = 0; i < couplesAmount; i++){
-                String readedLine = scanner.nextLine();
-                String[] splitted = readedLine.split(" ");
-                System.out.printf("imie1:%s imie2:%s\n", splitted);
-
-                Couple couple = new Couple(splitted[0], splitted[1]);
-
-                couples.add(couple);
-                System.out.println(couples.size());
+                PhoneBook phoneBook = new PhoneBook();
+                phoneBook.readContactFromUser();
 
             }
-
-
         }
-    }
