@@ -55,12 +55,12 @@ public class Main {
             int b = 0;
 
             try{
+                System.out.println("przed ilorazem");
                 int iloraz = a/b;
-                System.out.println(iloraz);
+                System.out.println("po ilorazie");
             }catch(ArithmeticException dzieleniePrzezZero){
-                dzieleniePrzezZero.getMessage();
-                System.out.println("Nie dziel przez zero");
-                System.out.println(dzieleniePrzezZero.getMessage());
+                //dzieleniePrzezZero.getMessage();
+                dzieleniePrzezZero.printStackTrace();
             }
 
             }
