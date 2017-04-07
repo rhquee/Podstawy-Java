@@ -36,20 +36,32 @@ import static java.lang.System.setOut;
 public class Main {
 
         public static void main(String[] args) {
+//
+//            ArrayList<Integer> integers = new ArrayList<>();
+//            integers.add(1);
+//            integers.add(2);
+//            integers.add(3);
+//            int indexFromUser = 3;
+//
+//            try{
+//                System.out.println(integers.get(indexFromUser));
+//                //wrazliwy kod
+//            }catch (IndexOutOfBoundsException exc /** typ wyjątku nazwa wyjątku, zawsze musi cos tutajj byc, im ogolniejszy typ tym wiecej wyjątków bedzie łapać */){
+//                //obsluga wyjątku
+//                System.out.println("Index poza zakresem2");
+//            }
 
-            ArrayList<Integer> integers = new ArrayList<>();
-            integers.add(1);
-            integers.add(2);
-            integers.add(3);
-            int indexFromUser = 3;
+            int a = 3;
+            int b = 0;
+
             try{
-                System.out.println(integers.get(indexFromUser));
-                //wrazliwy kod
-            }catch (IndexOutOfBoundsException exc /** typ wyjątku nazwa wyjątku, zawsze musi cos tutajj byc, im ogolniejszy typ tym wiecej wyjątków bedzie łapać */){
-                //obsluga wyjątku
-                System.out.println("Index poza zakresem2");
+                int iloraz = a/b;
+                System.out.println(iloraz);
+            }catch(ArithmeticException dzieleniePrzezZero){
+                dzieleniePrzezZero.getMessage();
+                System.out.println("Nie dziel przez zero");
+                System.out.println(dzieleniePrzezZero.getMessage());
             }
-
 
             }
         }
