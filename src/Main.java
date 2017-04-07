@@ -28,10 +28,7 @@ import couple.Couple;
 import mojeMetody.StringUtils;
 import phonebook.PhoneBook;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.TreeSet;
+import java.util.*;
 
 import static java.lang.System.out;
 import static java.lang.System.setOut;
@@ -39,55 +36,20 @@ import static java.lang.System.setOut;
 public class Main {
 
         public static void main(String[] args) {
-//            //tu sprawdzam tylko czy equals działa
-////            Couple couple1 = new Couple("a", "b");
-////            Couple couple2 = new Couple("a", "b");
-////            System.out.println(couple1.equals(couple2));
-//
-//            //tu jest zadanie
-//            HashSet<Couple> couples = new HashSet<>();
-//            Scanner scanner = new Scanner(System.in);
-//
-//            int couplesAmount = scanner.nextInt();
-//            scanner.nextLine();
-//
-//            for(int i = 0; i < couplesAmount; i++){
-//                String readedLine = scanner.nextLine();
-//                String[] splitted = readedLine.split(" ");
-//                System.out.printf("imie1:%s imie2:%s\n", splitted);
-//
-//                Couple couple = new Couple(splitted[0], splitted[1]);
-//
-//                couples.add(couple);
-//                System.out.println(couples.size());
-//            }
-//
-//            HashMap<Integer, String> map = new HashMap<>();
-//            map.put(1, "jeden");
-//            map.put(8, "osiem");
-//            map.put(2, "dwa");
-//            map.put(10, "dycha");
-//
-//            String value = map.get(8);
-//            System.out.println(value);
-//
-//            System.out.println(map);
 
-                PhoneBook phoneBook = new PhoneBook();
-               // phoneBook.readContactFromUser();
-            phoneBook.addContact("Tomasz", 603111111);
-            phoneBook.addContact("Michał", 603222222);
-            phoneBook.addContact("Daniel", 603333333);
-            phoneBook.addContact("Wojciech", 603444444);
+            ArrayList<Integer> integers = new ArrayList<>();
+            integers.add(1);
+            integers.add(2);
+            integers.add(3);
+            int indexFromUser = 3;
+            try{
+                System.out.println(integers.get(indexFromUser));
+                //wrazliwy kod
+            }catch (IndexOutOfBoundsException exc /** typ wyjątku nazwa wyjątku, zawsze musi cos tutajj byc, im ogolniejszy typ tym wiecej wyjątków bedzie łapać */){
+                //obsluga wyjątku
+                System.out.println("Index poza zakresem2");
+            }
 
-//            System.out.println(phoneBook.findNumber("Tomasz"));
-//            System.out.println(phoneBook.findNumber("Marcin"));
-//
-//            phoneBook.printAllContact();
-
-
-           System.out.println(phoneBook.findByPartialName("Toma"));
-            System.out.println(phoneBook.findAllByPartialName("Woj"));
 
             }
         }
