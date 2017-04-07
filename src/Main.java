@@ -25,6 +25,8 @@ import academy.Date;
 import academy.Student;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import couple.Couple;
+import mojeMetody.Calculator;
+import mojeMetody.DivideByZeroException;
 import mojeMetody.StringUtils;
 import phonebook.PhoneBook;
 
@@ -41,20 +43,30 @@ public class Main {
             integers.add(1);
             integers.add(2);
             integers.add(3);
-            int indexFromUser = 5;
+            int indexFromUser = 0;
 
             try {
-                int iloraz = 10 / indexFromUser;
+                int iloraz = Calculator.divide(10,indexFromUser);
                 integers.get(iloraz);
                 Integer.parseInt("jeden");
             //wyjątki musza byc poukładane od najbardziej szczegolowego u góry
-            }catch(ArithmeticException exc){
+            }
+            catch (DivideByZeroException exc){
+                System.out.println(exc.getMessage());
+            }
+            catch(ArithmeticException exc){
                 System.out.println("dzielenie przez 0");
                 exc.printStackTrace();
-            } catch (IndexOutOfBoundsException exc){
-                System.out.println("Index poza zakresem");
-            }catch(Exception exc){
-                System.out.println("Unknown exception");
+                //return - jesli tu jest return to wykona sie DO danego wyjatku + wykona sie finally
             }
+            catch (IndexOutOfBoundsException exc){
+                System.out.println("Index poza zakresem");
+            }
+            catch(Exception exc){
+                System.out.println("Unknown exception");
+            } finally {
+                System.out.println("finally!"); //kod "sprzatajacy" po wyjątkach
+            }
+
             }
             }
