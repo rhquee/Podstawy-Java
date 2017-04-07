@@ -25,6 +25,7 @@ import academy.Date;
 import academy.Student;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import couple.Couple;
+import hangedman.Game;
 import mojeMetody.Calculator;
 import mojeMetody.DivideByZeroException;
 import mojeMetody.StringUtils;
@@ -37,36 +38,41 @@ import static java.lang.System.setOut;
 
 public class Main {
 
-        public static void main(String[] args) {
+    public static void main(String[] args) {
 //
-            ArrayList<Integer> integers = new ArrayList<>();
-            integers.add(1);
-            integers.add(2);
-            integers.add(3);
-            int indexFromUser = 0;
+//            ArrayList<Integer> integers = new ArrayList<>();
+//            integers.add(1);
+//            integers.add(2);
+//            integers.add(3);
+//            int indexFromUser = 0;
+//
+//            try {
+//                int iloraz = Calculator.divide(10,indexFromUser);
+//                integers.get(iloraz);
+//                Integer.parseInt("jeden");
+//            //wyjątki musza byc poukładane od najbardziej szczegolowego u góry
+//            }
+//            catch (DivideByZeroException exc){
+//                System.out.println(exc.getMessage());
+//            }
+//            catch(ArithmeticException exc){
+//                System.out.println("dzielenie przez 0");
+//                exc.printStackTrace();
+//                //return - jesli tu jest return to wykona sie DO danego wyjatku + wykona sie finally
+//            }
+//            catch (IndexOutOfBoundsException exc){
+//                System.out.println("Index poza zakresem");
+//            }
+//            catch(Exception exc){
+//                System.out.println("Unknown exception");
+//            } finally {
+//                System.out.println("finally!"); //kod "sprzatajacy" po wyjątkach
+//            }
 
-            try {
-                int iloraz = Calculator.divide(10,indexFromUser);
-                integers.get(iloraz);
-                Integer.parseInt("jeden");
-            //wyjątki musza byc poukładane od najbardziej szczegolowego u góry
-            }
-            catch (DivideByZeroException exc){
-                System.out.println(exc.getMessage());
-            }
-            catch(ArithmeticException exc){
-                System.out.println("dzielenie przez 0");
-                exc.printStackTrace();
-                //return - jesli tu jest return to wykona sie DO danego wyjatku + wykona sie finally
-            }
-            catch (IndexOutOfBoundsException exc){
-                System.out.println("Index poza zakresem");
-            }
-            catch(Exception exc){
-                System.out.println("Unknown exception");
-            } finally {
-                System.out.println("finally!"); //kod "sprzatajacy" po wyjątkach
-            }
+        Game hangedman = new Game();
+        hangedman.startGame();
 
-            }
-            }
+
+
+    }
+}
