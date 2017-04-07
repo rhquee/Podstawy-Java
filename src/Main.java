@@ -72,6 +72,8 @@ public class Main {
         Game hangedman = new Game();
         hangedman.startGame();
 
+        char[] chars = secretWord.toCharArray();
+
 
 
     }
