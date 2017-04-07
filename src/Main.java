@@ -37,31 +37,24 @@ public class Main {
 
         public static void main(String[] args) {
 //
-//            ArrayList<Integer> integers = new ArrayList<>();
-//            integers.add(1);
-//            integers.add(2);
-//            integers.add(3);
-//            int indexFromUser = 3;
-//
-//            try{
-//                System.out.println(integers.get(indexFromUser));
-//                //wrazliwy kod
-//            }catch (IndexOutOfBoundsException exc /** typ wyjątku nazwa wyjątku, zawsze musi cos tutajj byc, im ogolniejszy typ tym wiecej wyjątków bedzie łapać */){
-//                //obsluga wyjątku
-//                System.out.println("Index poza zakresem2");
-//            }
+            ArrayList<Integer> integers = new ArrayList<>();
+            integers.add(1);
+            integers.add(2);
+            integers.add(3);
+            int indexFromUser = 5;
 
-            int a = 3;
-            int b = 0;
-
-            try{
-                System.out.println("przed ilorazem");
-                int iloraz = a/b;
-                System.out.println("po ilorazie");
-            }catch(ArithmeticException dzieleniePrzezZero){
-                //dzieleniePrzezZero.getMessage();
-                dzieleniePrzezZero.printStackTrace();
+            try {
+                int iloraz = 10 / indexFromUser;
+                integers.get(iloraz);
+                Integer.parseInt("jeden");
+            //wyjątki musza byc poukładane od najbardziej szczegolowego u góry
+            }catch(ArithmeticException exc){
+                System.out.println("dzielenie przez 0");
+                exc.printStackTrace();
+            } catch (IndexOutOfBoundsException exc){
+                System.out.println("Index poza zakresem");
+            }catch(Exception exc){
+                System.out.println("Unknown exception");
             }
-
             }
-        }
+            }
