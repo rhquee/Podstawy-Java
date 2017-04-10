@@ -30,6 +30,10 @@ import mojeMetody.Calculator;
 import mojeMetody.DivideByZeroException;
 import mojeMetody.StringUtils;
 import phonebook.PhoneBook;
+import vehicle.Car;
+import vehicle.Motocycle;
+import vehicle.Ship;
+import vehicle.Vehicle;
 
 import java.util.*;
 
@@ -38,47 +42,31 @@ import static java.lang.System.setOut;
 
 public class Main {
 
+    public static void printDescription(Vehicle v){
+        v.description();
+    }
+
+
     public static void main(String[] args) {
-//
-//            ArrayList<Integer> integers = new ArrayList<>();
-//            integers.add(1);
-//            integers.add(2);
-//            integers.add(3);
-//            int indexFromUser = 0;
-//
-//            try {
-//                int iloraz = Calculator.divide(10,indexFromUser);
-//                integers.get(iloraz);
-//                Integer.parseInt("jeden");
-//            //wyjątki musza byc poukładane od najbardziej szczegolowego u góry
-//            }
-//            catch (DivideByZeroException exc){
-//                System.out.println(exc.getMessage());
-//            }
-//            catch(ArithmeticException exc){
-//                System.out.println("dzielenie przez 0");
-//                exc.printStackTrace();
-//                //return - jesli tu jest return to wykona sie DO danego wyjatku + wykona sie finally
-//            }
-//            catch (IndexOutOfBoundsException exc){
-//                System.out.println("Index poza zakresem");
-//            }
-//            catch(Exception exc){
-//                System.out.println("Unknown exception");
-//            } finally {
-//                System.out.println("finally!"); //kod "sprzatajacy" po wyjątkach
-//            }
+//        Vehicle vehicle1 = new Vehicle();
+//        vehicle1.description();
+//        Car car1 = new Car();
+//        car1.description();
 
-        Game hangedman = new Game();
-        hangedman.startGame();
-        hangedman.makeSecret();
-        hangedman.readLetterFromUser();
+//        Vehicle vehicle1 = new Car();
+//        vehicle1.description();
 
+        printDescription(new Car());
+        printDescription(new Motocycle());
+        printDescription(new Ship());
 
+//        Car car2 = (Car) new Vehicle(); //bez tego w nawiasie nie jest możliwe takie wskazanie
+//        car2.description();
 
-
-
-
+        Vehicle car1 = new Car();
+        Car car2 = (Car) car1;
+        car1.wheels; //brak dostepu, musiałoby być ((Car) car1).wheels
+        car1.description();
 
     }
 }

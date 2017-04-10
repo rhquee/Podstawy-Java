@@ -18,10 +18,16 @@ import java.util.Scanner;
  * //wyswietlenie stanu wyrazu i szans
  */
 
+//Main:
+//        Game hangedman = new Game();
+//        hangedman.startGame();
+//        hangedman.makeSecret();
+//        hangedman.readLetterFromUser();
+
 public class Game {
     private static String FILE_NAME = "wyrazy.txt";
-    private static String secretWord;
-    private static String maskedWord = "";
+    private String secretWord;
+    private String maskedWord = "";
 
 
     public void startGame() {
@@ -70,7 +76,7 @@ public class Game {
         }
 
         //jezeli odgadl przerwij
-        return readLetterFromUser();
+        return readLetterFromUser(); //
     }
 
     public Boolean checkIfLetterExist(String letterForCeck) {
