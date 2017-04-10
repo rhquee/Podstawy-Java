@@ -20,12 +20,16 @@ import java.util.Scanner;
 
 public class Game {
     private static String FILE_NAME = "wyrazy.txt";
+    private static String secretWord;
+    private static String maskedWord = "";
+
+
     public void startGame() {
-        String secretWord = randomSecretWord();
+        secretWord = randomSecretWord();
         System.out.printf("%s\n", secretWord);
     }
 
-    private String randomSecretWord(){
+    private String randomSecretWord() {
         ArrayList<String> words = readFromFile();
         Random random = new Random();
         int index = random.nextInt(words.size());
@@ -45,4 +49,46 @@ public class Game {
         }
         return readList;
     }
+
+    public String makeSecret() {
+        for (int i = 0; i < secretWord.length(); i++) {
+            maskedWord = maskedWord + "_";
+        }
+        System.out.println(maskedWord);
+        return maskedWord;
+    }
+
+    public String readLetterFromUser() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Zgadnij litere?");
+        String letter = scanner.nextLine();
+
+        if (checkIfLetterExist(letter)) {
+            ShowGuessed(letter.charAt(0));
+        } else {
+            //zmniejsz liczbę żyć o 1
+        }
+
+        //jezeli odgadl przerwij
+        return readLetterFromUser();
+    }
+
+    public Boolean checkIfLetterExist(String letterForCeck) {
+        return secretWord.toLowerCase().contains(letterForCeck.toLowerCase());
+    }
+
+    public String ShowGuessed(char literkaDoOdkrycia) {
+        StringBuilder sb = new StringBuilder(maskedWord);
+        for (int i = 0; i < secretWord.length(); i++) {
+            if ("_".charAt(0) == maskedWord.charAt(i) && literkaDoOdkrycia == secretWord.charAt(i)) {
+                sb.setCharAt(i, literkaDoOdkrycia);
+            } else {
+                sb.setCharAt(i, maskedWord.charAt(i));
+            }
+        }
+        maskedWord = sb.toString();
+        System.out.println(maskedWord);
+        return maskedWord;
+    }
 }
+

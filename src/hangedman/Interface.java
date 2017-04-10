@@ -18,6 +18,7 @@ public class Interface {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wpisz litere?");
         String letter = scanner.next();
+        return readLetterFromUser();
+    }
+    }
 
-    }
-    }
