@@ -30,10 +30,11 @@ import mojeMetody.Calculator;
 import mojeMetody.DivideByZeroException;
 import mojeMetody.StringUtils;
 import phonebook.PhoneBook;
-import vehicle.Car;
-import vehicle.Motocycle;
-import vehicle.Ship;
-import vehicle.Vehicle;
+import shapes.Circle;
+import shapes.Shape;
+import shapes.Square;
+import shapes.Triangle;
+import vehicle.*;
 
 import java.util.*;
 
@@ -42,7 +43,7 @@ import static java.lang.System.setOut;
 
 public class Main {
 
-    public static void printDescription(Vehicle v){
+    public static void printDescription(Vehicle v) {
         v.description();
     }
 
@@ -56,17 +57,41 @@ public class Main {
 //        Vehicle vehicle1 = new Car();
 //        vehicle1.description();
 
-        printDescription(new Car());
-        printDescription(new Motocycle());
-        printDescription(new Ship());
+//        printDescription(new Car());
+//        printDescription(new Motocycle());
+//        printDescription(new Ship());
 
 //        Car car2 = (Car) new Vehicle(); //bez tego w nawiasie nie jest możliwe takie wskazanie
 //        car2.description();
 
-        Vehicle car1 = new Car();
-        Car car2 = (Car) car1;
-        car1.wheels; //brak dostepu, musiałoby być ((Car) car1).wheels
-        car1.description();
+//        Vehicle car1 = new Car();
+//        Car car2 = (Car) car1;
+//       // car1.wheels; //brak dostepu, musiałoby być ((Car) car1).wheels
+//        car1.description();
+//
+//        ArrayList<Vehicle> list = new ArrayList<>();
+//        list.add(new Car());
+//        list.add(new Motocycle());
+//        list.add(new Ship());
+//        int sum = 0;
+//        for (Vehicle v : list) {
+//            sum += v.getPrice();
+//        }
+//        System.out.println(sum);
+//    //////
+//
+//        printDescription(new Car());
+//        printDescription(new Motocycle());
+//        printDescription(new Ship());
+//        printDescription(new Plane());
 
+        Shape triangle = new Triangle();
+        triangle.surfaceArea();
+
+        Shape square = new Square();
+        square.surfaceArea();
+
+        Shape circle = new Circle();
+        circle.surfaceArea();
     }
 }
