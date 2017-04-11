@@ -3,7 +3,7 @@ package shapes;
 /**
  * Created by RENT on 2017-04-10.
  */
-public class Square extends Shape {
+public class Square extends Shape implements HasVertexes {
     private int a;
     private int b;
 
@@ -15,5 +15,10 @@ public class Square extends Shape {
     @Override
     public double calculateArea() {
         return a * b;
+    }
+
+    @Override
+    public int hasVertexes() {
+        return 4;
     }
 }

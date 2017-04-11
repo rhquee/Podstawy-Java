@@ -23,6 +23,7 @@
 
 import academy.Date;
 import academy.Student;
+import academy.StudentState;
 import com.sun.org.apache.xpath.internal.SourceTree;
 import couple.Couple;
 import hangedman.Game;
@@ -30,10 +31,7 @@ import mojeMetody.Calculator;
 import mojeMetody.DivideByZeroException;
 import mojeMetody.StringUtils;
 import phonebook.PhoneBook;
-import shapes.Circle;
-import shapes.Shape;
-import shapes.Square;
-import shapes.Triangle;
+import shapes.*;
 import vehicle.*;
 
 import java.util.*;
@@ -86,12 +84,41 @@ public class Main {
 //        printDescription(new Plane());
 
 
-            Shape circle = new Circle(5.0);
-            Shape rectangle = new Square(2, 5);
-            Shape triangle = new Triangle(3.0, 4.0);
-            System.out.printf("%f\n%f\n%f\n",
-                    circle.calculateArea(),
-                    rectangle.calculateArea(),
-                    triangle.calculateArea());
+//        Shape circle = new Circle(5.0);
+//        Shape square = new Square(2, 5);
+//        Shape triangle = new Triangle(3.0, 4.0);
+//        System.out.printf("%f\n%f\n%f\n",
+//                circle.calculateArea(),
+//                square.calculateArea(),
+//                triangle.calculateArea());
+
+//        HasVertexes triangle2 = new Triangle(3, 4);
+//        System.out.printf("%d\n", triangle2.hasVertexes());
+
+//        Passengers car1 = new Car();
+//        Passengers plane1 = new Plane();
+//        Passengers ship1 = new Ship();
+//        System.out.printf("W samochodzie miesci sie %d ludzi,\nw samolocie miesci sie %d ludzi,\na w statku az %d\n",
+//                car1.amountOfPassengers(),
+//                plane1.amountOfPassengers(),
+//                ship1.amountOfPassengers());
+//
+//        List<Integer> list = new ArrayList<>(); //zamiast arrylist przed =
+//        List<Integer> linkedList = new LinkedList<>(); //zamiast linkedList przed =
+//        linkedList.size(); //zaimplementowane dla "list"
+
+        //StudentState.ACTIVE;
+        Student s = new Student("Ania", new Date(1,2,1990), "8888", StudentState.ACTIVE);
+        StudentState studentState = s.getStudentState();
+        System.out.println(studentState);
+
+        System.out.println(studentState.ACTIVE.hasRoghtForStipend); //czemu "false"? bo nie byl przypisany has... = b w konstruktorze
+        System.out.println(studentState.SUSSPEND.hasRoghtForStipend);
+
+        StudentState.ACTIVE.translated = "aaaa"; //moge zmienic tu nazwe enuma publiczbego, dlatego lepiej zeby byl prywatny
+        StudentState[] values = StudentState.values();
+        for(StudentState state : values){
+            System.out.println(state.translated);
         }
     }
+}

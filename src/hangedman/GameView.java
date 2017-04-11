@@ -11,14 +11,14 @@ import java.util.Scanner;
  * //sprawdzenie czy litera wystepuje w slowie
  * //wyswietlenie stanu wyrazu i szans
  */
+public class GameView {
 
-public class Interface {
+    public void printState(String currentState){
 
-    public String readLetterFromUser(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Wpisz litere?");
-        String letter = scanner.next();
-        return readLetterFromUser();
     }
+
+    public String getCharFromUser(){
+        return "";
     }
+}
 

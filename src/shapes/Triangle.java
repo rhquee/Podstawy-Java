@@ -3,7 +3,7 @@ package shapes;
 /**
  * Created by RENT on 2017-04-10.
  */
-public class Triangle extends Shape {
+public class Triangle extends Shape implements HasVertexes {
     private double a;
     private double h;
 
@@ -16,4 +16,10 @@ public class Triangle extends Shape {
     public double calculateArea() {
         return (a * h) / 2;
     }
+
+    @Override
+    public int hasVertexes() {
+        return 3;
+    }
 }
+
