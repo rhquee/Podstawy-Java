@@ -85,13 +85,13 @@ public class Main {
 //        printDescription(new Ship());
 //        printDescription(new Plane());
 
-        Shape triangle = new Triangle();
-        triangle.surfaceArea();
 
-        Shape square = new Square();
-        square.surfaceArea();
-
-        Shape circle = new Circle();
-        circle.surfaceArea();
+            Shape circle = new Circle(5.0);
+            Shape rectangle = new Square(2, 5);
+            Shape triangle = new Triangle(3.0, 4.0);
+            System.out.printf("%f\n%f\n%f\n",
+                    circle.calculateArea(),
+                    rectangle.calculateArea(),
+                    triangle.calculateArea());
+        }
     }
-}
