@@ -1,5 +1,3 @@
-//import mojeMetody.MojeMetody;
-//
 //public class Main {
 //
 //    public static void main(String[] args) {
@@ -24,29 +22,16 @@
 import academy.Date;
 import academy.Student;
 import academy.StudentState;
-import com.sun.org.apache.xpath.internal.SourceTree;
-import couple.Couple;
-import hangedman.Game;
-import mojeMetody.Calculator;
-import mojeMetody.DivideByZeroException;
-import mojeMetody.StringUtils;
-import phonebook.PhoneBook;
-import shapes.*;
-import vehicle.*;
-
-import java.util.*;
-
-import static java.lang.System.out;
-import static java.lang.System.setOut;
+import polimorfismVehicle.Vehicle;
 
 public class Main {
 
-    public static void printDescription(Vehicle v) {
-        v.description();
-    }
+        public static void printDescription(Vehicle v) {
+            v.description();
+        }
 
 
-    public static void main(String[] args) {
+        public static void main(String[] args) {
 //        Vehicle vehicle1 = new Vehicle();
 //        vehicle1.description();
 //        Car car1 = new Car();
@@ -107,18 +92,18 @@ public class Main {
 //        List<Integer> linkedList = new LinkedList<>(); //zamiast linkedList przed =
 //        linkedList.size(); //zaimplementowane dla "list"
 
-        //StudentState.ACTIVE;
-        Student s = new Student("Ania", new Date(1,2,1990), "8888", StudentState.ACTIVE);
-        StudentState studentState = s.getStudentState();
-        System.out.println(studentState);
+            //StudentState.ACTIVE;
+            Student s = new Student("Ania", new Date(1,2,1990), "8888", StudentState.ACTIVE);
+            StudentState studentState = s.getStudentState();
+            System.out.println(studentState);
 
-        System.out.println(studentState.ACTIVE.hasRoghtForStipend); //czemu "false"? bo nie byl przypisany has... = b w konstruktorze
-        System.out.println(studentState.SUSSPEND.hasRoghtForStipend);
+            System.out.println(studentState.ACTIVE.hasRoghtForStipend); //czemu "false"? bo nie byl przypisany has... = b w konstruktorze
+            System.out.println(studentState.SUSSPEND.hasRoghtForStipend);
 
-        StudentState.ACTIVE.translated = "aaaa"; //moge zmienic tu nazwe enuma publiczbego, dlatego lepiej zeby byl prywatny
-        StudentState[] values = StudentState.values();
-        for(StudentState state : values){
-            System.out.println(state.translated);
+            StudentState.ACTIVE.translated = "aaaa"; //moge zmienic tu nazwe enuma publiczbego, dlatego lepiej zeby byl prywatny
+            StudentState[] values = StudentState.values();
+            for(StudentState state : values){
+                System.out.println(state.translated);
+            }
         }
     }
-}

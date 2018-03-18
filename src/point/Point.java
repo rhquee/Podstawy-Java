@@ -1,8 +1,5 @@
 package point;
 
-/**
- * Created by E550 on 2017-04-04.
- */
 
 public class Point<T extends Number> {
     private T x;
@@ -25,10 +22,12 @@ public class Point<T extends Number> {
     @Override
     public boolean equals(Object obj){
         Point p = (Point) obj;
+        //zapis 1:
 //        if(x.equals(p.getX()) &&  y.equals(p.getY())){
 //            return true;
 //        }else return false;
-        //to samo krócej:
+
+        //zapis 2:
         return x.equals(p.getX()) &&  y.equals(p.getY());
     }
 
@@ -42,11 +41,11 @@ public class Point<T extends Number> {
         return x;
     }
 
-    public T getY() {
-        return y;
-    }
-
     public void setY(T y) {
         this.y = y;
+    }
+
+    public T getY() {
+        return y;
     }
 }
